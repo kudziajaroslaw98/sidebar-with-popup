@@ -14,9 +14,11 @@ const Pill = ({
       data-testid="pill"
       className="flex items-center gap-2 bg-gray-50 rounded-lg px-2 py-1 text-sm font-bold text-gray-700 border border-gray-100"
     >
-      {text}
+      <span data-testid="pill-text">{text}</span>
       {closeable && (
         <Xmark
+          role="button"
+          data-testid="close-icon"
           className="text-gray-400 cursor-pointer"
           tabIndex={0}
           onClick={onClose}

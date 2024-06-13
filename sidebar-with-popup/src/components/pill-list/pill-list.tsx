@@ -1,4 +1,4 @@
-import Pill from "../pill/pill";
+import Pill from "../ui/pill/pill";
 
 interface PillListProps<T> {
   items: T[];

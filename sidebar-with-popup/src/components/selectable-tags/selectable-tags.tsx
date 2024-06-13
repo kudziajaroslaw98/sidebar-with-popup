@@ -15,7 +15,6 @@ const SelectableTags = ({
     <SelectableList
       items={tags}
       keyBy="id"
-      textByKey="name"
       selectedItems={pickedTags}
       onChange={onChange}
       render={(item) => (

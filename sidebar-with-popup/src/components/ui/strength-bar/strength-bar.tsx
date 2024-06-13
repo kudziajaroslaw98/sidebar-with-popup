@@ -39,14 +39,23 @@ const StrengthBar = (props: StrengthBarProps) => {
 
   return (
     <div className="flex gap-2 items-center">
-      <span className={`${textColors[getStrength()]} text-sm font-medium`}>
+      <span
+        data-testid="strength-text"
+        className={`${textColors[getStrength()]} text-sm font-medium`}
+      >
         {strengthText[getStrength()]}
       </span>
 
-      <div className="flex gap-1">
+      <div
+        role="progressbar"
+        aria-valuenow={getStrength()}
+        data-testid="strength-bar"
+        className="flex gap-1"
+      >
         {Array.from({ length: 5 }, (_, index) => (
           <div
             key={index}
+            data-testid="strength-bar-pill"
             className={`flex w-2 h-1 rounded-full ${
               index < props.value ? colors[getStrength()] : "bg-gray-300"
             }`}
