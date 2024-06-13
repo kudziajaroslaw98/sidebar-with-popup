@@ -3,7 +3,6 @@ import { InputHTMLAttributes } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   isSearching?: boolean;
-  onInputChange: (value: string) => void;
   onInputClear?: () => void;
   showClearButton?: boolean;
   showSearchIcon?: boolean;
@@ -11,7 +10,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const Input = ({
   isSearching,
-  onInputChange,
   onInputClear,
   showClearButton = true,
   showSearchIcon = true,

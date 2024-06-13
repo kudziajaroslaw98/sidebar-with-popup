@@ -14,7 +14,7 @@ export default function PillList<T>({
   emptyMessage,
 }: PillListProps<T>) {
   return (
-    <div className="overflow-y-auto w-full flex flex-wrap gap-1">
+    <div className="w-full flex flex-wrap gap-1">
       {items.length > 0 &&
         items.map((item) => (
           <Pill

@@ -1,5 +1,5 @@
 import { CheckCircleSolid, InfoCircleSolid } from "iconoir-react";
-import StrengthBar from "../strength-bar/strength-bar";
+import StrengthBar from "../ui/strength-bar/strength-bar";
 
 const StrengthIndicator = ({ strength }: { strength: number }) => {
   return (

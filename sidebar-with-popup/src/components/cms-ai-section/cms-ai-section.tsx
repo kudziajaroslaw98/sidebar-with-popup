@@ -2,7 +2,7 @@ import { Hashtag, Sparks, SparksSolid } from "iconoir-react";
 
 const CmsAiSection = () => {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col p-1 gap-1">
       <h4 className="flex items-center gap-2 p-2 text-gray-400 font-medium text-sm">
         <SparksSolid className="size-4" />
         CMS AI
