@@ -3,15 +3,15 @@ import { Tag } from "../../App";
 import areArraysEqual from "../../utils/are-arrays-equal";
 import isInArrayByKey from "../../utils/is-in-array-by-key";
 import CmsAiSection from "../cms-ai-section/cms-ai-section";
-import Divider from "../divider/divider";
 import PillList from "../pill-list/pill-list";
 import SelectableTags from "../selectable-tags/selectable-tags";
 import StrengthIndicator from "../strength-indicator/strength-indicator";
+import Divider from "../ui/divider/divider";
 import Input from "../ui/input/input";
 import Popover from "../ui/popover/popover";
 
 const TagsPopover = ({
-  open,
+  open = false,
   onClose,
 }: {
   open: boolean;

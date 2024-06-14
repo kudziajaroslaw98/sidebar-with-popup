@@ -8,6 +8,9 @@ const tooltipVariants = cva(`after:size-3 after:absolute after:bg-gray-950`, {
       right: "left-14 bottom-0 after:rotate-45 after:-left-1 after:top-3",
     },
   },
+  defaultVariants: {
+    position: "left",
+  },
 });
 
 interface TooltipProps extends VariantProps<typeof tooltipVariants> {

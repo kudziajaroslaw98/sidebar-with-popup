@@ -3,8 +3,8 @@ import type { Tag } from "../../App";
 import SelectableList from "../ui/selectable-list/selectable-list";
 
 const SelectableTags = ({
-  tags,
-  pickedTags,
+  tags = [],
+  pickedTags = [],
   onChange,
 }: {
   tags: Tag[];
