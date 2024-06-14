@@ -3,9 +3,11 @@ import StrengthIndicator from "./strength-indicator";
 
 describe("StrengthIndicator", () => {
   test("renders StrengthBar with correct value", () => {
+    // SETUP
     const strength = 3;
     render(<StrengthIndicator strength={strength} />);
 
+    // THEN
     const strengthIcon = screen.getByTestId("strength-icon");
     const strengthMessage = screen.getByTestId("strength-message");
     const strengthIndicator = screen.getByTestId("strength-indicator");
@@ -18,9 +20,11 @@ describe("StrengthIndicator", () => {
   });
 
   test("renders success message when strength is 5 or more", () => {
+    // SETUP
     const strength = 5;
     render(<StrengthIndicator strength={strength} />);
 
+    // THEN
     const strengthIcon = screen.getByTestId("strength-icon");
     const strengthMessage = screen.getByTestId("strength-message");
     const strengthIndicator = screen.getByTestId("strength-indicator");
