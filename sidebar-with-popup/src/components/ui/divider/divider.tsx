@@ -1,6 +1,9 @@
 const Divider = () => {
   return (
-    <hr className="w-full h-[1px] bg-gray-100 border-0" aria-hidden="true" />
+    <hr
+      className='h-[1px] w-full border-0 bg-gray-100'
+      aria-hidden='true'
+    />
   );
 };
 

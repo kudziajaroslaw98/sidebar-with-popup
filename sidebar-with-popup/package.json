@@ -26,7 +26,8 @@
     "test": "jest",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 3001",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "eslintConfig": {
     "extends": [
@@ -66,6 +67,11 @@
     "@types/lodash": "^4.17.5",
     "eslint-plugin-storybook": "^0.8.0",
     "jest": "^29.7.0",
+    "prettier": "^3.3.2",
+    "prettier-plugin-organize-attributes": "^1.0.0",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-sort-imports": "^1.8.5",
+    "prettier-plugin-tailwindcss": "^0.6.4",
     "prop-types": "^15.8.1",
     "storybook": "^8.1.9",
     "tailwindcss": "^3.4.4",

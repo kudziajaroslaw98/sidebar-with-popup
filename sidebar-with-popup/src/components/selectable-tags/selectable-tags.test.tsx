@@ -1,27 +1,31 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import SelectableTags from "./selectable-tags";
+import { fireEvent, render, screen } from '@testing-library/react';
+import SelectableTags from './selectable-tags';
 
-describe("SelectableTags Component", () => {
+describe('SelectableTags Component', () => {
   const tags = [
-    { id: 1, name: "Tag1", usages: 2 },
-    { id: 2, name: "Tag2", usages: 2 },
+    { id: 1, name: 'Tag1', usages: 2 },
+    { id: 2, name: 'Tag2', usages: 2 }
   ];
-  const pickedTags = [{ id: 1, name: "Tag1", usages: 2 }];
+  const pickedTags = [{ id: 1, name: 'Tag1', usages: 2 }];
   const onChange = jest.fn();
 
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it("renders SelectableTags component correctly", () => {
+  it('renders SelectableTags component correctly', () => {
     // SETUP
     render(
-      <SelectableTags tags={tags} pickedTags={pickedTags} onChange={onChange} />
+      <SelectableTags
+        tags={tags}
+        pickedTags={pickedTags}
+        onChange={onChange}
+      />
     );
 
     // THEN
-    const tagNames = screen.getAllByTestId("tag-name");
-    const tagUsages = screen.getAllByTestId("tag-usages");
+    const tagNames = screen.getAllByTestId('tag-name');
+    const tagUsages = screen.getAllByTestId('tag-usages');
 
     expect(tagNames).toHaveLength(2);
     tagNames.forEach((tag, index) => {
@@ -31,17 +35,21 @@ describe("SelectableTags Component", () => {
     });
   });
 
-  it("calls onChange when a tag is selected", () => {
+  it('calls onChange when a tag is selected', () => {
     // SETUP
     render(
-      <SelectableTags tags={tags} pickedTags={pickedTags} onChange={onChange} />
+      <SelectableTags
+        tags={tags}
+        pickedTags={pickedTags}
+        onChange={onChange}
+      />
     );
 
     // THEN
     expect(onChange).toHaveBeenCalledTimes(0);
 
     // WHEN
-    const selectableItems = screen.getAllByTestId("selectable-list-item");
+    const selectableItems = screen.getAllByTestId('selectable-list-item');
 
     fireEvent.click(selectableItems[1]);
 

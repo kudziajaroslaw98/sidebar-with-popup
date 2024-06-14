@@ -1,5 +1,5 @@
-import { Search, XmarkCircleSolid } from "iconoir-react";
-import { InputHTMLAttributes } from "react";
+import { Search, XmarkCircleSolid } from 'iconoir-react';
+import { InputHTMLAttributes } from 'react';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   isSearching?: boolean;
@@ -16,27 +16,27 @@ const Input = ({
   ...props
 }: InputProps) => {
   return (
-    <label className="flex items-center justify-center gap-2">
+    <label className='flex items-center justify-center gap-2'>
       {showSearchIcon && (
         <Search
-          data-testid="input-search-icon"
-          className="text-gray-500 size-5"
+          data-testid='input-search-icon'
+          className='size-5 text-gray-500'
         />
       )}
 
       <input
-        data-testid="input"
-        className="w-full placeholder:text-sm px-2 py-1 font-medium"
+        data-testid='input'
+        className='w-full px-2 py-1 font-medium placeholder:text-sm'
         {...props}
       />
 
       {showClearButton && (
-        <div className="size-5">
+        <div className='size-5'>
           {isSearching && (
             <XmarkCircleSolid
-              role="button"
-              data-testid="input-close-icon"
-              className="text-gray-400 size-4 cursor-pointer"
+              role='button'
+              data-testid='input-close-icon'
+              className='size-4 cursor-pointer text-gray-400'
               onClick={onInputClear}
             />
           )}

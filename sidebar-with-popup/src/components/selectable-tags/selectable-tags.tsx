@@ -1,11 +1,11 @@
-import { Check } from "iconoir-react";
-import type { Tag } from "../../App";
-import SelectableList from "../ui/selectable-list/selectable-list";
+import SelectableList from '../ui/selectable-list/selectable-list';
+import { Check } from 'iconoir-react';
+import type { Tag } from '../../App';
 
 const SelectableTags = ({
   tags = [],
   pickedTags = [],
-  onChange,
+  onChange
 }: {
   tags: Tag[];
   pickedTags: Tag[];
@@ -14,27 +14,27 @@ const SelectableTags = ({
   return (
     <SelectableList
       items={tags}
-      keyBy="id"
+      keyBy='id'
       selectedItems={pickedTags}
       onChange={onChange}
       render={(item) => (
-        <div className="w-full flex justify-between px-2 py-1 gap-2">
-          <div className="flex items-center gap-3 w-full">
-            <span className="size-5 group-[.selected]:bg-blue-700 bg-gray-100 border border-gray-200 rounded-md flex justify-center items-center">
-              <Check className="hidden group-[.selected]:flex text-gray-400 group-[.selected]:text-white size-4" />
+        <div className='flex w-full justify-between gap-2 px-2 py-1'>
+          <div className='flex w-full items-center gap-3'>
+            <span className='flex size-5 items-center justify-center rounded-md border border-gray-200 bg-gray-100 group-[.selected]:bg-blue-700'>
+              <Check className='hidden size-4 text-gray-400 group-[.selected]:flex group-[.selected]:text-white' />
             </span>
 
             <span
-              data-testid="tag-name"
-              className="text-ellipsis w-full max-w-36 text-sm whitespace-nowrap overflow-clip"
+              data-testid='tag-name'
+              className='w-full max-w-36 overflow-clip text-ellipsis whitespace-nowrap text-sm'
             >
               {item.name}
             </span>
           </div>
 
           <span
-            data-testid="tag-usages"
-            className="flex text-gray-400 text-sm "
+            data-testid='tag-usages'
+            className='flex text-sm text-gray-400'
           >{`+${item.usages}`}</span>
         </div>
       )}

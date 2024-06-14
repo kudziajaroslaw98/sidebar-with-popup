@@ -1,21 +1,21 @@
-import Pill from "./pill";
+import Pill from './pill';
 
 export default {
-  title: "UI/Pill",
+  title: 'UI/Pill',
   component: Pill,
-  tags: ["autodocs"],
+  tags: ['autodocs']
 };
 
 export const WithoutClose = {
   args: {
-    text: "Maryla Rodowicz",
-    closeable: false,
-  },
+    text: 'Maryla Rodowicz',
+    closeable: false
+  }
 };
 
 export const WithClose = {
   args: {
-    text: "Maryla Rodowicz",
-    closeable: true,
-  },
+    text: 'Maryla Rodowicz',
+    closeable: true
+  }
 };

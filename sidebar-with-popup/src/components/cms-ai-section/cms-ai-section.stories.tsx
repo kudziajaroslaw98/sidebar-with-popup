@@ -1,9 +1,9 @@
-import CmsAiSection from "./cms-ai-section";
+import CmsAiSection from './cms-ai-section';
 
 export default {
-  title: "Components/Cms Ai Section",
+  title: 'Components/Cms Ai Section',
   component: CmsAiSection,
-  tags: ["autodocs"],
+  tags: ['autodocs']
 };
 
 export const SectionExample = {};

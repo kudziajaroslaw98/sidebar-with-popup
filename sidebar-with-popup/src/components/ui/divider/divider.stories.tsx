@@ -1,15 +1,15 @@
-import Divider from "./divider";
+import Divider from './divider';
 
 export default {
-  title: "UI/Divider",
+  title: 'UI/Divider',
   component: Divider,
-  tags: ["autodocs"],
+  tags: ['autodocs']
 };
 
 export const DividerExample = {
   render: () => (
-    <div className="w-80">
+    <div className='w-80'>
       <Divider />
     </div>
-  ),
+  )
 };

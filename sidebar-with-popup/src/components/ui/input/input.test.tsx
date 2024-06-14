@@ -1,14 +1,14 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import Input from "./input";
+import { fireEvent, render, screen } from '@testing-library/react';
+import Input from './input';
 
-describe("Input", () => {
-  it("renders the input element", () => {
+describe('Input', () => {
+  it('renders the input element', () => {
     // SETUP
     render(<Input />);
 
-    const inputElement = screen.getByTestId("input");
-    const searchIcon = screen.queryByTestId("input-search-icon");
-    const clearButton = screen.queryByTestId("input-close-icon");
+    const inputElement = screen.getByTestId('input');
+    const searchIcon = screen.queryByTestId('input-search-icon');
+    const clearButton = screen.queryByTestId('input-close-icon');
 
     // THEN
     expect(inputElement).toBeDefined();
@@ -16,27 +16,32 @@ describe("Input", () => {
     expect(clearButton).toBeFalsy();
   });
 
-  it("renders the search icon", () => {
+  it('renders the search icon', () => {
     // SETUP
     render(<Input showSearchIcon />);
 
     // THEN
-    const searchIcon = screen.getByTestId("input-search-icon");
+    const searchIcon = screen.getByTestId('input-search-icon');
 
     expect(searchIcon).toBeDefined();
   });
 
-  it("renders the clear button", () => {
+  it('renders the clear button', () => {
     // SETUP
-    render(<Input showClearButton isSearching />);
+    render(
+      <Input
+        showClearButton
+        isSearching
+      />
+    );
 
     // THEN
-    const clearButton = screen.getByTestId("input-close-icon");
+    const clearButton = screen.getByTestId('input-close-icon');
 
     expect(clearButton).toBeDefined();
   });
 
-  it("calls onInputClear when the clear button is clicked", () => {
+  it('calls onInputClear when the clear button is clicked', () => {
     // SETUP
     const onInputClearMock = jest.fn();
 
@@ -49,7 +54,7 @@ describe("Input", () => {
     );
 
     // GIVEN
-    const clearButton = screen.getByTestId("input-close-icon");
+    const clearButton = screen.getByTestId('input-close-icon');
 
     expect(onInputClearMock).toHaveBeenCalledTimes(0);
 
@@ -60,19 +65,24 @@ describe("Input", () => {
     expect(onInputClearMock).toHaveBeenCalledTimes(1);
   });
 
-  it("correctly emits onChange", () => {
+  it('correctly emits onChange', () => {
     // SETUP
     const onChangeMock = jest.fn();
 
-    render(<Input value="abc" onChange={onChangeMock} />);
+    render(
+      <Input
+        value='abc'
+        onChange={onChangeMock}
+      />
+    );
 
     // GIVEN
-    const input = screen.getByTestId("input") as HTMLInputElement;
+    const input = screen.getByTestId('input') as HTMLInputElement;
 
-    expect(input.value).toBe("abc");
+    expect(input.value).toBe('abc');
 
     //WHEN
-    fireEvent.change(input, { target: { value: "test" } });
+    fireEvent.change(input, { target: { value: 'test' } });
 
     //THEN
     expect(onChangeMock).toHaveBeenCalledTimes(1);

@@ -1,12 +1,12 @@
-import TagsPopover from "./tags-popover";
+import TagsPopover from './tags-popover';
 
 export default {
-  title: "Components/Tags Popover",
+  title: 'Components/Tags Popover',
   component: TagsPopover,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
-    open: true,
-  },
+    open: true
+  }
 };
 
 export const TagsPopoverExample = {};

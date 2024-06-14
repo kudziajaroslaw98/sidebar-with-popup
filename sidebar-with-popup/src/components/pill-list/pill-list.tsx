@@ -1,4 +1,4 @@
-import Pill from "../ui/pill/pill";
+import Pill from '../ui/pill/pill';
 
 interface PillListProps<T> {
   items: T[];
@@ -7,14 +7,9 @@ interface PillListProps<T> {
   emptyMessage?: string;
 }
 
-export default function PillList<T>({
-  items,
-  textByKey,
-  onClose,
-  emptyMessage,
-}: PillListProps<T>) {
+export default function PillList<T>({ items, textByKey, onClose, emptyMessage }: PillListProps<T>) {
   return (
-    <div className="w-full flex flex-wrap gap-1">
+    <div className='flex w-full flex-wrap gap-1'>
       {items.length > 0 &&
         items.map((item) => (
           <Pill
@@ -25,8 +20,8 @@ export default function PillList<T>({
         ))}
 
       <span
-        data-testid="pill-list-empty-message"
-        className="w-full flex justify-center items-center text-sm text-gray-400"
+        data-testid='pill-list-empty-message'
+        className='flex w-full items-center justify-center text-sm text-gray-400'
       >
         {items.length === 0 && emptyMessage}
       </span>

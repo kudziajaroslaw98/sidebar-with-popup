@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import Tooltip from "../ui/tooltip/tooltip";
+import Tooltip from '../ui/tooltip/tooltip';
+import { ReactNode } from 'react';
 
 export interface SideBarItem {
   icon: ReactNode;
@@ -15,24 +15,27 @@ interface SideBarProps {
 export default function SideBar({ items }: SideBarProps) {
   return (
     <aside
-      data-testid="sidebar"
-      className="flex flex-col gap-2 p-1 rounded-lg border border-gray-200 bg-white shadow-sm h-auto w-auto"
+      data-testid='sidebar'
+      className='flex h-auto w-auto flex-col gap-2 rounded-lg border border-gray-200 bg-white p-1 shadow-sm'
     >
       {items.map((item) => (
         <button
-          data-testid="sidebar-item"
+          data-testid='sidebar-item'
           key={item.name}
-          className="size-9 group relative flex items-center p-2 rounded-md hover:bg-gray-100"
+          className='group relative flex size-9 items-center rounded-md p-2 hover:bg-gray-100'
           onClick={() => item.onClick && item.onClick()}
         >
           <span
-            data-testid="sidebar-item-icon"
-            className="w-full h-full flex items-center justify-center"
+            data-testid='sidebar-item-icon'
+            className='flex h-full w-full items-center justify-center'
           >
             {item.icon}
           </span>
 
-          <Tooltip name={item.name} shortcut={item.shortcut ?? ""} />
+          <Tooltip
+            name={item.name}
+            shortcut={item.shortcut ?? ''}
+          />
         </button>
       ))}
     </aside>

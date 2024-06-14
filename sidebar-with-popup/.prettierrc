@@ -1,0 +1,17 @@
+{
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "singleAttributePerLine": true,
+  "bracketSpacing": true,
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "semi": true,
+  "printWidth": 100,
+  "tailwindConfig": "./tailwind.config.js",
+  "plugins": [
+    "prettier-plugin-sort-imports",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-organize-attributes",
+    "prettier-plugin-tailwindcss"
+  ]
+}

@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from "jest";
+import type { Config } from 'jest';
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
@@ -13,7 +13,7 @@ const config: Config = {
   // bail: 0,
   moduleNameMapper: {
     // all mock names
-    "\\.(css|less)$": "<rootDir>/node_modules/tailwindcss", // try to do this, it works without error
+    '\\.(css|less)$': '<rootDir>/node_modules/tailwindcss' // try to do this, it works without error
   },
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "C:\\Users\\DragonBird\\AppData\\Local\\Temp\\jest",
@@ -148,7 +148,7 @@ const config: Config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -157,7 +157,7 @@ const config: Config = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)']
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [

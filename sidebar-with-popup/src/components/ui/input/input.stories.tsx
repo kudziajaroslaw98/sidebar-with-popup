@@ -1,40 +1,40 @@
-import Input from "./input";
+import Input from './input';
 
 export default {
-  title: "UI/Input",
+  title: 'UI/Input',
   component: Input,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     showSearchIcon: {
-      name: "showSearchIcon",
-      control: "boolean",
-      defaultValue: false,
+      name: 'showSearchIcon',
+      control: 'boolean',
+      defaultValue: false
     },
     isSearching: {
-      name: "isSearching",
-      control: "boolean",
-      defaultValue: false,
+      name: 'isSearching',
+      control: 'boolean',
+      defaultValue: false
     },
     showClearButton: {
-      name: "showClearButton",
+      name: 'showClearButton',
       description: 'Is visible only when "isSearching" is true',
-      control: "boolean",
-      defaultValue: false,
-    },
-  },
+      control: 'boolean',
+      defaultValue: false
+    }
+  }
 };
 
 export const Text = {
   args: {
-    placeholder: "Wyszukaj grupę lub tag",
-  },
+    placeholder: 'Wyszukaj grupę lub tag'
+  }
 };
 
 export const WithSearchIcon = {
   args: {
     showSearchIcon: true,
-    placeholder: "Wyszukaj grupę lub tag",
-  },
+    placeholder: 'Wyszukaj grupę lub tag'
+  }
 };
 
 export const WithSearchAndClearIcon = {
@@ -42,6 +42,6 @@ export const WithSearchAndClearIcon = {
     showSearchIcon: true,
     showClearButton: true,
     isSearching: true,
-    placeholder: "Wyszukaj grupę lub tag",
-  },
+    placeholder: 'Wyszukaj grupę lub tag'
+  }
 };
