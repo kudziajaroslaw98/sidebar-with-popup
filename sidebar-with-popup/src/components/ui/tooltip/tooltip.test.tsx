@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import "../../../output.css";
-import Tooltip from "../tooltip";
+import Tooltip from "./tooltip";
 
 describe("Tooltip", () => {
   beforeEach(() => {

@@ -18,7 +18,10 @@ const Input = ({
   return (
     <label className="flex items-center justify-center gap-2">
       {showSearchIcon && (
-        <Search data-testid="search-icon" className="text-gray-500 size-5" />
+        <Search
+          data-testid="input-search-icon"
+          className="text-gray-500 size-5"
+        />
       )}
 
       <input
@@ -32,7 +35,7 @@ const Input = ({
           {isSearching && (
             <XmarkCircleSolid
               role="button"
-              data-testid="close-icon"
+              data-testid="input-close-icon"
               className="text-gray-400 size-4 cursor-pointer"
               onClick={onInputClear}
             />

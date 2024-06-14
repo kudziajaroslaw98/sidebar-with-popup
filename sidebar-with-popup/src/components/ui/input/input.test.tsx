@@ -7,8 +7,8 @@ describe("Input", () => {
     render(<Input />);
 
     const inputElement = screen.getByTestId("input");
-    const searchIcon = screen.queryByTestId("search-icon");
-    const clearButton = screen.queryByTestId("close-icon");
+    const searchIcon = screen.queryByTestId("input-search-icon");
+    const clearButton = screen.queryByTestId("input-close-icon");
 
     // THEN
     expect(inputElement).toBeDefined();
@@ -21,7 +21,7 @@ describe("Input", () => {
     render(<Input showSearchIcon />);
 
     // THEN
-    const searchIcon = screen.getByTestId("search-icon");
+    const searchIcon = screen.getByTestId("input-search-icon");
 
     expect(searchIcon).toBeDefined();
   });
@@ -31,7 +31,7 @@ describe("Input", () => {
     render(<Input showClearButton isSearching />);
 
     // THEN
-    const clearButton = screen.getByTestId("close-icon");
+    const clearButton = screen.getByTestId("input-close-icon");
 
     expect(clearButton).toBeDefined();
   });
@@ -49,7 +49,7 @@ describe("Input", () => {
     );
 
     // GIVEN
-    const clearButton = screen.getByTestId("close-icon");
+    const clearButton = screen.getByTestId("input-close-icon");
 
     expect(onInputClearMock).toHaveBeenCalledTimes(0);
 

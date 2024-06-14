@@ -35,7 +35,7 @@ describe("PillList", () => {
     );
 
     // THEN
-    const firstPillCloseIcon = screen.getAllByTestId("close-icon")[0];
+    const firstPillCloseIcon = screen.getAllByTestId("pill-close-icon")[0];
     expect(firstPillCloseIcon).toBeDefined();
     expect(mockOnClose).toHaveBeenCalledTimes(0);
 
@@ -59,7 +59,7 @@ describe("PillList", () => {
     );
 
     // THEN
-    const emptyMessage = screen.getByTestId("empty-message");
+    const emptyMessage = screen.getByTestId("pill-list-empty-message");
 
     expect(emptyMessage).toBeDefined();
     expect(emptyMessage.textContent).toBe("No items");

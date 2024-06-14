@@ -82,7 +82,6 @@ const TagsPopover = ({
 
   const [savedTags, setSavedTags] = useState<Tag[]>([]);
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
-
   const [filteredTags, setFilteredTags] = useState<Tag[]>([]);
 
   const handleTagClose = (tag: Tag) => {
@@ -141,6 +140,8 @@ const TagsPopover = ({
           isSearching={isSearching}
           placeholder="Wyszukaj grupę lub tag"
           onInputClear={handleClearSearch}
+          showClearButton={true}
+          showSearchIcon={true}
         />
       </Popover.Header>
 
@@ -176,6 +177,7 @@ const TagsPopover = ({
           <button
             onClick={handleSaveTags}
             disabled={areArraysEqual(savedTags, selectedTags, "id")}
+            data-testid="save-button"
             className="w-full cursor-pointer transition focus:active:scale-95 hover:bg-blue-500 active:bg-blue-700 h-8 font-bold bg-blue-600 text-white rounded-md text-sm disabled:bg-gray-100 disabled:text-gray-300 disabled:cursor-not-allowed"
           >
             Zapisz

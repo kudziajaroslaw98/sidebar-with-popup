@@ -19,7 +19,7 @@ describe("Pill Component", () => {
     render(<Pill text="Example Text" closeable={false} />);
 
     // THEN
-    const closeIcon = screen.queryByTestId("close-icon");
+    const closeIcon = screen.queryByTestId("pill-close-icon");
 
     expect(closeIcon).toBeNull();
   });
@@ -29,7 +29,7 @@ describe("Pill Component", () => {
     render(<Pill text="Example Text" />);
 
     // THEN
-    const closeIcon = screen.getByTestId("close-icon");
+    const closeIcon = screen.getByTestId("pill-close-icon");
 
     expect(closeIcon).toBeDefined();
   });
@@ -41,7 +41,7 @@ describe("Pill Component", () => {
     render(<Pill text="Example Text" onClose={onCloseMock} />);
 
     // THEN
-    const closeIcon = screen.getByTestId("close-icon");
+    const closeIcon = screen.getByTestId("pill-close-icon");
 
     expect(closeIcon).toBeDefined();
     expect(onCloseMock).toHaveBeenCalledTimes(0);

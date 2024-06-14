@@ -18,7 +18,7 @@ const Pill = ({
       {closeable && (
         <Xmark
           role="button"
-          data-testid="close-icon"
+          data-testid="pill-close-icon"
           className="text-gray-400 cursor-pointer"
           tabIndex={0}
           onClick={onClose}

@@ -25,7 +25,7 @@ export default function PillList<T>({
         ))}
 
       <span
-        data-testid="empty-message"
+        data-testid="pill-list-empty-message"
         className="w-full flex justify-center items-center text-sm text-gray-400"
       >
         {items.length === 0 && emptyMessage}
