@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import Tooltip from "../tooltip/tooltip";
+import Tooltip from "../ui/tooltip/tooltip";
 
-interface SideBarItem {
+export interface SideBarItem {
   icon: ReactNode;
   name: string;
   shortcut?: string;
@@ -20,12 +20,12 @@ export default function SideBar({ items }: SideBarProps) {
     >
       {items.map((item) => (
         <button
-          data-testid={"sidebar-item"}
+          data-testid="sidebar-item"
           key={item.name}
           className="size-9 group relative flex items-center gap-2 p-2 rounded-md hover:bg-gray-100"
           onClick={() => item.onClick && item.onClick()}
         >
-          {item.icon}
+          <span data-testid="sidebar-item-icon">{item.icon}</span>
           <Tooltip name={item.name} shortcut={item.shortcut ?? ""} />
         </button>
       ))}

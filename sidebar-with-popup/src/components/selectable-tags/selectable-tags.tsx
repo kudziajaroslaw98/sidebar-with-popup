@@ -24,12 +24,18 @@ const SelectableTags = ({
               <Check className="hidden group-[.selected]:flex text-gray-400 group-[.selected]:text-white size-4" />
             </span>
 
-            <span className="text-ellipsis w-full max-w-36 text-sm whitespace-nowrap overflow-clip">
+            <span
+              data-testid="tag-name"
+              className="text-ellipsis w-full max-w-36 text-sm whitespace-nowrap overflow-clip"
+            >
               {item.name}
             </span>
           </div>
 
-          <span className="flex text-gray-400 text-sm ">{`+${item.usages}`}</span>
+          <span
+            data-testid="tag-usages"
+            className="flex text-gray-400 text-sm "
+          >{`+${item.usages}`}</span>
         </div>
       )}
     ></SelectableList>

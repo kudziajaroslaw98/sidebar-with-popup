@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import SelectableTags from "./selectable-tags";
 
 describe("SelectableTags Component", () => {
@@ -9,31 +9,44 @@ describe("SelectableTags Component", () => {
   const pickedTags = [{ id: 1, name: "Tag1", usages: 2 }];
   const onChange = jest.fn();
 
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("renders SelectableTags component correctly", () => {
+    // SETUP
     render(
       <SelectableTags tags={tags} pickedTags={pickedTags} onChange={onChange} />
     );
 
-    // Add your assertions here to check if the component renders correctly
-    expect(screen.getByText("Tag1")).toBeInTheDocument();
-    expect(screen.getByText("Tag2")).toBeInTheDocument();
-    // Add more assertions as needed
+    // THEN
+    const tagNames = screen.getAllByTestId("tag-name");
+    const tagUsages = screen.getAllByTestId("tag-usages");
+
+    expect(tagNames).toHaveLength(2);
+    tagNames.forEach((tag, index) => {
+      expect(tag).toBeDefined();
+      expect(tag.textContent).toBe(tags[index].name);
+      expect(tagUsages[index].textContent).toBe(`+${tags[index].usages}`);
+    });
   });
 
   it("calls onChange when a tag is selected", () => {
+    // SETUP
     render(
       <SelectableTags tags={tags} pickedTags={pickedTags} onChange={onChange} />
     );
 
-    // Simulate a user selecting a tag
-    // Add your code here to simulate the selection
+    // THEN
+    expect(onChange).toHaveBeenCalledTimes(0);
 
-    // Check if the onChange function is called with the correct arguments
-    // Add your assertion here to check if onChange function is called
-    expect(
-      onChange
-    ).toHaveBeenCalledWith(/* Add your expected arguments here */);
+    // WHEN
+    const selectableItems = screen.getAllByTestId("selectable-list-item");
+
+    fireEvent.click(selectableItems[1]);
+
+    // THEN
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith(tags[1]);
   });
-
-  // Add more test cases as needed
 });

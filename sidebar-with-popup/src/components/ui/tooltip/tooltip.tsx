@@ -1,5 +1,5 @@
 import { cva, VariantProps } from "class-variance-authority";
-import { cn } from "../../utils/cn";
+import { cn } from "../../../utils/cn";
 
 const tooltipVariants = cva(`after:size-3 after:absolute after:bg-gray-950`, {
   variants: {
